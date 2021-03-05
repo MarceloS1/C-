@@ -1,20 +1,74 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual C++ Express 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Menu Diagnostico", "Menu Diagnostico\Menu Diagnostico.vcxproj", "{8A81394E-4978-4BF9-AD61-6984ADFD60D9}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Win32 = Debug|Win32
-		Release|Win32 = Release|Win32
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8A81394E-4978-4BF9-AD61-6984ADFD60D9}.Debug|Win32.ActiveCfg = Debug|Win32
-		{8A81394E-4978-4BF9-AD61-6984ADFD60D9}.Debug|Win32.Build.0 = Debug|Win32
-		{8A81394E-4978-4BF9-AD61-6984ADFD60D9}.Release|Win32.ActiveCfg = Release|Win32
-		{8A81394E-4978-4BF9-AD61-6984ADFD60D9}.Release|Win32.Build.0 = Release|Win32
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-EndGlobal
+#include "stdafx.h"
+#include "conio.h"
+#include "iostream"
+using namespace std;
+int main ()
+{
+	int op;
+	float di,ti,ve,d=0,t=0,v=0,vel=0;
+	do
+	{
+		cout<<" MOVIMIENTO RECTILINEO UNIFORME   "<<endl;
+	cout<<"Digite la variable que desea encontrar"<<endl;
+		cout<<"Opcion 1: Encontrar velocidad "	<<endl;
+		cout<<"Opcion 2: Encontrar la distancia   "<<endl;
+		cout<<"Opcion 3: Encontrar el tiempo   "<<endl;
+		cout<<"Opcion 4: Salir del programa"<<endl;
+		cin>>op;
+		switch (op)
+		{
+				case 1: //if(op==1) 
+					cout<<"NOTA LOS VALORES DEBEN SER POSITIVOS Y MAYORES A CERO"<<endl;
+					cout<<"Opcion 1: Encontrar la velocidad en "<<endl;
+					do{
+					cout<<"digite la distancia en km"<<endl;
+					cin>>di;
+					}while(di<=0);
+					do{
+					cout<<"digite el tiempo en h"<<endl;
+					cin>>ti;
+					}while(ti<=0);
+					ve=di/ti;
+					v=ve;
+					cout<<"La velocidad final en km/h  "  <<v<<endl;
+
+ 				break;
+			case 2: cout<<"NOTA LOS VALORES DEBEN SER POSITIVOS Y MAYORES A CERO "<<endl;
+					cout<<"Opcion 2: Encontrar la distancia"	<<endl;
+					do{
+					cout<<"digite la velocidad en km/h"<<endl;
+					cin>>ve;
+					}while(ve<=0);
+					do{
+					cout<<"digite el tiempo en h"<<endl;
+					cin>>ti;
+					}while(ti<=0);
+					di=ti * ve;
+					d=di;
+					cout<<"La distancia final en km es " <<  di  <<endl;
+				break;
+				
+			case 3:
+				cout<<"NOTA LOS VALORES DEBEN SER POSITIVOS Y MAYORES A CERO "<<endl;
+				cout<<"Opcion 3: Encontrar el tiempo "	<<endl;
+				do{
+					cout<<"digite la velocidad en km/h"<<endl;
+					cin>>ve; 
+				}while(ve<=0);
+				do{
+					cout<<"digite la distancia en km"<<endl;
+					cin>>di;
+				}while(di<=0);
+					ti=di/ve;
+					t=ti;
+					cout<<"El tiempo en h es " <<  t  <<endl;
+					
+	break;
+		}
+		}while(op!=4);
+		cout<<"El programa finalizo porque se digito el numero 4"<<endl;
+		
+		getch();
+	
+	return 0;
+}
